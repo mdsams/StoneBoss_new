@@ -17,7 +17,7 @@ export default function ProductAndBarCode() {
     <ImageBackground
       source={Images.productAndBarCodeBackground}
       style={{flex: 1}}>
-      <BlankSpacer height={hp(7)} />
+      <BlankSpacer height={hp(6)} />
       <View
         style={{
           justifyContent: 'center',
@@ -36,7 +36,7 @@ export default function ProductAndBarCode() {
         />
       </View>
 
-      <BlankSpacer height={hp(10)} />
+      <BlankSpacer height={hp(8)} />
 
       <View
         style={{
@@ -44,24 +44,20 @@ export default function ProductAndBarCode() {
           width: wp(90),
           alignItems: 'center',
           alignSelf: 'center',
-          backgroundColor: Colors.lightBlue,
+          backgroundColor: Colors.lightgray,
+          opacity: 0.5,
           justifyContent: 'center',
           borderRadius: wp(0.5),
           height: hp(8),
         }}>
         <TextInput
-          placeholder="Enter Product Details"
+          placeholder="Enter Product Code"
           style={[
             {
-              // height: hp(7),
               paddingLeft: 11,
-              // color: Colors.black,
-              // fontSize: hp(1.9),
-              // fontFamily: fonts.PoppinsLight,
               width: wp(78),
               marginTop: wp(0.1),
             },
-            //   {width: wp(77)},
           ]}
           underlineColorAndroid="transparent"
           placeholderTextColor={Colors.lightgray}
@@ -75,8 +71,8 @@ export default function ProductAndBarCode() {
           width: wp(90),
           alignItems: 'center',
           alignSelf: 'center',
-          backgroundColor: '#C4C4C4',
-          //   opacity: 0.5,
+          backgroundColor: Colors.lightgray,
+          opacity: 0.5,
           justifyContent: 'center',
           borderRadius: wp(0.5),
           height: hp(8),
@@ -85,15 +81,10 @@ export default function ProductAndBarCode() {
           placeholder="Enter Product Details"
           style={[
             {
-              // height: hp(7),
               paddingLeft: 11,
-              // color: Colors.black,
-              // fontSize: hp(1.9),
-              fontFamily: fonts.PoppinsLight,
               width: wp(78),
               marginTop: wp(0.1),
             },
-            //   {width: wp(77)},
           ]}
           underlineColorAndroid="transparent"
           placeholderTextColor={Colors.white}
@@ -115,7 +106,7 @@ export default function ProductAndBarCode() {
         width={wp(63)}
         color={Colors.buttonRed}
         textColor={Colors.white}
-        textFontFamily={fonts.PoppinsMedium}
+        textFontFamily={fonts.Montserrat}
         // onPress={() => signOut()}
       />
       <BlankSpacer height={hp(15)} />
@@ -125,7 +116,7 @@ export default function ProductAndBarCode() {
         width={wp(80)}
         color={Colors.buttonRed}
         textColor={Colors.white}
-        textFontFamily={fonts.PoppinsMedium}
+        textFontFamily={fonts.Montserrat}
       />
     </ImageBackground>
   );

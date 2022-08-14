@@ -101,7 +101,6 @@ function Input({
         placeholder={placeholder ? placeholder : 'placeholder'}
         style={{
           fontSize: textSize,
-          fontFamily: fonts.PoppinsRegular,
           flex: 1,
           marginHorizontal: wp(3),
           paddingHorizontal: wp(2),

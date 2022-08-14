@@ -16,6 +16,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		12A0B963C8F4499CBC15CBC1 /* MontserratAlternates-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1629BB2E50614FD6AB6163E4 /* MontserratAlternates-ExtraBold.otf */; };
 		9D28C4AFCCD54B28ADD2A842 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9607599E615440DB4D7DE62 /* Oswald-Bold.ttf */; };
+		ED2837186B74432CB3CB4B17 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8F59AE92322C4927804EA4C6 /* Montserrat-ExtraBold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		1629BB2E50614FD6AB6163E4 /* MontserratAlternates-ExtraBold.otf */ = {isa = PBXFileReference; name = "MontserratAlternates-ExtraBold.otf"; path = "../src/Assets/fonts/MontserratAlternates-ExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		E9607599E615440DB4D7DE62 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; name = "Oswald-Bold.ttf"; path = "../src/Assets/fonts/Oswald-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F59AE92322C4927804EA4C6 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; name = "Montserrat-ExtraBold.otf"; path = "../src/Assets/fonts/Montserrat-ExtraBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			children = (
 				1629BB2E50614FD6AB6163E4 /* MontserratAlternates-ExtraBold.otf */,
 				E9607599E615440DB4D7DE62 /* Oswald-Bold.ttf */,
+				8F59AE92322C4927804EA4C6 /* Montserrat-ExtraBold.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				12A0B963C8F4499CBC15CBC1 /* MontserratAlternates-ExtraBold.otf in Resources */,
 				9D28C4AFCCD54B28ADD2A842 /* Oswald-Bold.ttf in Resources */,
+				ED2837186B74432CB3CB4B17 /* Montserrat-ExtraBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

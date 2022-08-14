@@ -50,7 +50,8 @@ export const Dimension = {
 };
 
 export const fonts = {
-  Montserrat: 'MontserratAlternates-ExtraBold',
+  MontserratBold: 'MontserratAlternates-ExtraBold',
+  Montserrat: 'Montserrat-ExtraBold',
   Oswald: 'Oswald-Bold',
 };
 
