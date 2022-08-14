@@ -6,7 +6,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Navigation from './Navigation/Index';
 import useCachedResources from './appState/CachedResources';
 import {AuthContext} from './Constants/Context';
-import ProductDetails from './Screens/App/ProductDetails';
+import ProductAndBarCode from './Screens/App/ProductAndBarCode';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -28,15 +28,15 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <AuthContext.Provider
         value={{
           State,
           ...Dispatchers,
         }}>
         <Navigation />
-      </AuthContext.Provider>
-      {/* <ProductDetails /> */}
+      </AuthContext.Provider> */}
+      <ProductAndBarCode />
     </>
   );
 };

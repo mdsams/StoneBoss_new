@@ -129,6 +129,7 @@ function Input({
                 height: wp(5),
                 width: wp(7),
                 marginRight: wp(5),
+                tintColor: Colors.white,
               },
               rightImageStyle,
             ]}

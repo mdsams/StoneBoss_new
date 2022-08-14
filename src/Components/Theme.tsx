@@ -18,7 +18,7 @@ export const Colors = {
   darkermidgray: '#999',
   darkgray: '#888',
   mdgray: '#BFBFBF',
-  lightgray: '#F2F2F2',
+  lightgray: '#C4C4C4',
   textColor: '#183A4A',
   transparentlightblack: 'rgba(0, 0, 0, 0.25)',
   transparent: 'rgba(0, 0, 0, 0.00)',
@@ -33,6 +33,7 @@ export const Images = {
   editPencil: require('../Assets/Images/editPencil.png'),
   userIcon: require('../Assets/Images/user_light.png'),
   signInbackground: require('../Assets/Images/bg.png'),
+  productAndBarCodeBackground: require('../Assets/Images/pab.png'),
   stoneBossImage: require('../Assets/Images/logo.png'),
   splashScreenImage: require('../Assets/Images/Splash.jpg'),
   productBanner: require('../Assets/Images/productBanner.png'),
@@ -40,6 +41,7 @@ export const Images = {
   orderIcon: require('../Assets/Images/orderIcon.png'),
   productIcon: require('../Assets/Images/productIcon.png'),
   logout: require('../Assets/Images/logout.png'),
+  barcode: require('../Assets/Images/barcode.png'),
 };
 
 export const Dimension = {
@@ -48,15 +50,8 @@ export const Dimension = {
 };
 
 export const fonts = {
-  PoppinsBlack: 'Poppins-Black',
-  PoppinsBold: 'Poppins-Bold',
-  PoppinsExtraBold: 'Poppins-ExtraBold',
-  PoppinsSemiBold: 'Poppins-SemiBold',
-  PoppinsMedium: 'Poppins-Medium',
-  PoppinsRegular: 'Poppins-Regular',
-  PoppinsLight: 'Poppins-Light',
-  PoppinsExtraLight: 'Poppins-ExtraLight',
-  PoppinsThin: 'Poppins-Thin',
+  Montserrat: 'MontserratAlternates-ExtraBold',
+  Oswald: 'Oswald-Bold',
 };
 
 export const SplashScreen = {

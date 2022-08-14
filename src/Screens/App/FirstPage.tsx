@@ -33,7 +33,7 @@ const Home = () => {
             style={{
               fontSize: 18,
               color: Colors.buttonRed,
-              fontFamily: 'bold',
+              fontFamily: fonts.Montserrat,
             }}>
             Good Morning
           </Text>
@@ -41,7 +41,7 @@ const Home = () => {
             style={{
               fontSize: 40,
               color: Colors.black,
-              fontFamily: 'bold',
+              fontFamily: fonts.Oswald,
               letterSpacing: -2,
             }}>
             DAVID JHONSON
@@ -63,7 +63,7 @@ const Home = () => {
                 <Text
                   style={{
                     fontSize: 25,
-                    fontFamily: 'bold',
+                    fontFamily: fonts.Oswald,
                     color: Colors.white,
                     alignSelf: 'center',
                     marginLeft: 5,
@@ -106,7 +106,7 @@ const Home = () => {
                 <Text
                   style={{
                     fontSize: 25,
-                    fontFamily: 'bold',
+                    fontFamily: fonts.Oswald,
                     color: Colors.white,
                     alignSelf: 'center',
                     marginLeft: 5,
@@ -141,7 +141,7 @@ const Home = () => {
             width={wp(63)}
             color={Colors.buttonRed}
             textColor={Colors.white}
-            textFontFamily={fonts.PoppinsMedium}
+            textFontFamily={fonts.Montserrat}
             onPress={() => signOut()}
             imageRight={Images.logout}
             imgHeight={wp(6)}

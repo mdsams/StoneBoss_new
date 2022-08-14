@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/Assets/fonts/MontserratAlternates-ExtraBold.otf",
+      "sha1": "7686837b7b77ea26fa61eca78a6c84796d235ef7"
+    },
+    {
+      "path": "src/Assets/fonts/Oswald-Bold.ttf",
+      "sha1": "be2345122099ffcfef8e48775e8a58bee7db474e"
+    }
+  ]
+}
