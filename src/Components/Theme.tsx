@@ -39,6 +39,7 @@ export const Images = {
   orderBanner: require('../Assets/Images/orderBanner.png'),
   orderIcon: require('../Assets/Images/orderIcon.png'),
   productIcon: require('../Assets/Images/productIcon.png'),
+  logout: require('../Assets/Images/logout.png'),
 };
 
 export const Dimension = {

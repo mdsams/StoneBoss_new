@@ -88,8 +88,8 @@ function Input({
           source={leftImage}
           style={[
             {
-              height: wp(6.6),
-              width: wp(6.6),
+              height: wp(7.5),
+              width: wp(6),
               marginLeft: wp(5),
             },
             leftImageStyle,
@@ -126,7 +126,7 @@ function Input({
             source={rightImage}
             style={[
               {
-                height: wp(7),
+                height: wp(5),
                 width: wp(7),
                 marginRight: wp(5),
               },

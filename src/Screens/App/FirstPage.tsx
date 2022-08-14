@@ -19,6 +19,7 @@ import {launchImageLibrary} from 'react-native-image-picker';
 import BlankSpacer from '../../Components/BlankSpace';
 import {Images, Colors, fonts} from '../../Components/Theme';
 import {AuthContext, ctx} from '../../Constants/Context';
+import Button from '../../Components/Button';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -134,27 +135,18 @@ const Home = () => {
             </View>
           </View>
           <BlankSpacer height={hp(2)} />
-
-          <TouchableOpacity
-            style={{
-              backgroundColor: Colors.buttonRed,
-              height: hp(6),
-              width: wp(80),
-              justifyContent: 'center',
-              alignItems: 'center',
-              alignSelf: 'center',
-            }}
-            activeOpacity={0.8}
-            onPress={() => signOut()}>
-            <Text
-              style={{
-                fontSize: 18,
-                lineHeight: wp(8),
-                color: Colors.white,
-              }}>
-              Log Out
-            </Text>
-          </TouchableOpacity>
+          <Button
+            text="LogOut"
+            height={hp(6)}
+            width={wp(63)}
+            color={Colors.buttonRed}
+            textColor={Colors.white}
+            textFontFamily={fonts.PoppinsMedium}
+            onPress={() => signOut()}
+            imageRight={Images.logout}
+            imgHeight={wp(6)}
+            imgWidth={wp(6)}
+          />
         </View>
       </View>
     </View>

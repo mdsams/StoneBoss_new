@@ -7,6 +7,30 @@ import {
 } from 'react-native-responsive-screen';
 import {Images, fonts, Colors} from './Theme';
 
+interface Props {
+  color: string;
+  text: string;
+  width: number;
+  height: number;
+  borderRadius: number;
+  image: any;
+  textColor: any;
+  isImage: any;
+  textFontSize: any;
+  textFontFamily: any;
+  tintColor: any;
+  shadow: any;
+  imgWidth: number;
+  imgHeight: number;
+  circleView: boolean;
+  imageLeft: boolean;
+  imageRight: boolean;
+  borderWidth: any;
+  borderColor: string;
+  onPress: any;
+  alignSelf: string;
+}
+
 const Button = ({
   color,
   text,
@@ -43,7 +67,7 @@ const Button = ({
         alignSelf: alignSelf,
         borderWidth: borderWidth ? borderWidth : null,
         borderColor: borderColor ? borderColor : null,
-        paddingHorizontal: imageLeft || imageRight ? wp(6) : 0,
+        paddingHorizontal: imageLeft || imageRight ? wp(20) : 0,
       },
       shadowEffwct: {
         // shadowColor: color?color:'transparent',
@@ -65,7 +89,7 @@ const Button = ({
         color: textColor ? textColor : '#fff',
         fontSize: textFontSize ? textFontSize : wp(4.4),
         fontFamily: textFontFamily ? textFontFamily : fonts.PoppinsMedium,
-        textAlign: 'center',
+        // textAlign: 'center',
       },
     },
   });

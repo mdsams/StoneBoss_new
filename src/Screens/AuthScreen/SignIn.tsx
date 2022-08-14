@@ -66,7 +66,7 @@ export default function SignIn() {
           <Text
             style={{
               textAlign: 'center',
-              fontFamily: fonts.PoppinsSemiBold,
+              fontFamily: fonts.PoppinsThin,
               fontSize: wp(17),
               color: Colors.white,
               lineHeight: wp(14.5),
