@@ -10,7 +10,7 @@ import Input from '../../Components/Input';
 import Button from '../../Components/Button';
 import GoBack from '../../Components/GoBack';
 
-export default function ProductAndBarCode() {
+export default function Order() {
   const [productCode, setProductCode] = useState('');
 
   return (
@@ -44,43 +44,14 @@ export default function ProductAndBarCode() {
           width: wp(90),
           alignItems: 'center',
           alignSelf: 'center',
-          backgroundColor: Colors.white,
-          opacity: 0.5,
-          justifyContent: 'center',
-          borderRadius: wp(0.5),
-          height: hp(8),
-        }}>
-        <TextInput
-          placeholder="Enter Product Code"
-          style={[
-            {
-              paddingLeft: 11,
-              width: wp(78),
-              marginTop: wp(0.1),
-              color: Colors.white,
-              fontFamily: fonts.Montserrat,
-            },
-          ]}
-          underlineColorAndroid="transparent"
-          placeholderTextColor={Colors.white}
-        />
-      </View>
-      <BlankSpacer height={hp(5)} />
-
-      <View
-        style={{
-          flexDirection: 'row',
-          width: wp(90),
-          alignItems: 'center',
-          alignSelf: 'center',
           backgroundColor: Colors.lightgray,
-          opacity: 0.5,
+          opacity: 0.7,
           justifyContent: 'center',
           borderRadius: wp(0.5),
           height: hp(8),
         }}>
         <TextInput
-          placeholder="Enter Product Details"
+          placeholder="Enter Sales Order#"
           style={[
             {
               paddingLeft: 11,
@@ -105,22 +76,13 @@ export default function ProductAndBarCode() {
       <BlankSpacer height={hp(5)} />
 
       <Button
-        text="SAVE & CONTINUE"
+        text="CONTINUE"
         height={hp(6)}
         width={wp(63)}
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
         // onPress={() => signOut()}
-      />
-      <BlankSpacer height={hp(15)} />
-      <Button
-        text="PREVIEW"
-        height={hp(7)}
-        width={wp(80)}
-        color={Colors.buttonRed}
-        textColor={Colors.white}
-        textFontFamily={fonts.Montserrat}
       />
     </ImageBackground>
   );

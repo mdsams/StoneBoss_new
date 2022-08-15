@@ -6,7 +6,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Navigation from './Navigation/Index';
 import useCachedResources from './appState/CachedResources';
 import {AuthContext} from './Constants/Context';
-import ProductAndBarCode from './Screens/App/ProductAndBarCode';
+import OrderItem from './Screens/App/OrderItem';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -36,7 +36,7 @@ const App = () => {
         }}>
         <Navigation />
       </AuthContext.Provider> */}
-      <ProductAndBarCode />
+      <OrderItem />
     </>
   );
 };

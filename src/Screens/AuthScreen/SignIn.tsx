@@ -66,7 +66,7 @@ export default function SignIn() {
           <Text
             style={{
               textAlign: 'center',
-              fontFamily: fonts.PoppinsThin,
+              fontFamily: fonts.Montserrat,
               fontSize: wp(17),
               color: Colors.white,
               lineHeight: wp(14.5),
@@ -78,7 +78,7 @@ export default function SignIn() {
           <Text
             style={{
               textAlign: 'center',
-              fontFamily: fonts.PoppinsRegular,
+              fontFamily: fonts.Montserrat,
               fontSize: wp(5.5),
               color: Colors.white,
               lineHeight: wp(8),
