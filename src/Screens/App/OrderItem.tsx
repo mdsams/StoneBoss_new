@@ -15,10 +15,6 @@ import {
 import BlankSpacer from '../../Components/BlankSpace';
 import Button from '../../Components/Button';
 
-/**
- *
- */
-
 export default function OrderItem() {
   return (
     <View
