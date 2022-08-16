@@ -5,6 +5,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {useNavigation} from '@react-navigation/native';
 
 //Components called
 import BlankSpacer from '../../Components/BlankSpace';
@@ -20,6 +21,7 @@ import Button from '../../Components/Button';
  * @returns jsx elements
  */
 export default function SignIn() {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [hidePass, setHidePass] = useState(true);
@@ -27,14 +29,15 @@ export default function SignIn() {
   const {signIn} = useContext<ctx>(AuthContext);
 
   const doSignIn = async () => {
-    try {
-      const userData = await userSignIn(email, password);
-      if (userData) {
-        signIn(userData.token, userData.user);
-      }
-    } catch (err) {
-      console.error(err);
-    }
+    // try {
+    //   const userData = await userSignIn(email, password);
+    //   if (userData) {
+    //     signIn(userData.token, userData.user);
+    //   }
+    // } catch (err) {
+    //   console.error(err);
+    // }
+    signIn('userData.token', 'userData.user');
   };
 
   return (
