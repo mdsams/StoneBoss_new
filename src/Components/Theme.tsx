@@ -30,7 +30,6 @@ export const Images = {
   eye: require('../Assets/Images/ic_eye.png'),
   password: require('../Assets/Images/ic_password.png'),
   eyeClose: require('../Assets/Images/eyeClose.png'),
-  editPencil: require('../Assets/Images/editPencil.png'),
   userIcon: require('../Assets/Images/user_light.png'),
   signInbackground: require('../Assets/Images/bg.png'),
   productAndBarCodeBackground: require('../Assets/Images/pab.png'),
@@ -46,6 +45,7 @@ export const Images = {
   rectangle: require('../Assets/Images/Rectangle.png'),
   back: require('../Assets/Images/eva_arrow.png'),
   delete: require('../Assets/Images/delete.png'),
+  close: require('../Assets/Images/close.png'),
 };
 
 export const Dimension = {

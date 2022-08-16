@@ -6,7 +6,7 @@ import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Navigation from './Navigation/Index';
 import useCachedResources from './appState/CachedResources';
 import {AuthContext} from './Constants/Context';
-import OrderItem from './Screens/App/OrderItem';
+import OrderItem from './Screens/App/OrderItem/OrderItem';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';

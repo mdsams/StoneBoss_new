@@ -12,7 +12,7 @@ import SpalashScreen from '../Screens/SpalashScreen/SpalashScreen';
 import ProductAndBarCode from '../Screens/App/ProductAndBarCode';
 import ProductListing from '../Screens/App/ProductDetails';
 import Order from '../Screens/App/Order';
-import OrderItem from '../Screens/App/OrderItem';
+import OrderItem from '../Screens/App/OrderItem/OrderItem';
 
 const Stack = createStackNavigator();
 

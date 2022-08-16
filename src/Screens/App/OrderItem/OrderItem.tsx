@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, ImageBackground, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -6,12 +6,14 @@ import {
 } from 'react-native-responsive-screen';
 
 //Component Called
-import {Colors, fonts, Images} from '../../Components/Theme';
-import BlankSpacer from '../../Components/BlankSpace';
-import Button from '../../Components/Button';
-import {GoBack} from '../../Components/GoBack';
+import {Colors, fonts, Images} from '../../../Components/Theme';
+import BlankSpacer from '../../../Components/BlankSpace';
+import Button from '../../../Components/Button';
+import {GoBack} from '../../../Components/GoBack';
+import ModalComponent from './ModalComponent';
 
 export default function OrderItem() {
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View
       style={{
@@ -92,8 +94,14 @@ export default function OrderItem() {
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
-        // onPress={() => signOut()}
+        onPress={() => setModalVisible(!modalVisible)}
       />
+      {modalVisible ? (
+        <ModalComponent
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+        />
+      ) : null}
     </View>
   );
 }
