@@ -55,17 +55,16 @@ export default function ProductAndBarCode() {
         }}>
         <TextInput
           placeholder="Enter Product Code"
-          style={[
-            {
-              paddingLeft: 11,
-              width: wp(78),
-              marginTop: wp(0.1),
-              color: Colors.white,
-              fontFamily: fonts.Montserrat,
-            },
-          ]}
-          underlineColorAndroid="transparent"
           placeholderTextColor={Colors.white}
+          style={{
+            paddingLeft: 11,
+            width: wp(78),
+            marginTop: wp(0.1),
+            color: Colors.white,
+            fontFamily: fonts.Montserrat,
+          }}
+          value={productCode}
+          onChangeText={setProductCode}
         />
       </View>
       <BlankSpacer height={hp(5)} />

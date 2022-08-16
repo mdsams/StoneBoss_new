@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TextInput, Modal, Image, TouchableOpacity} from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -24,6 +24,12 @@ export default function ModalComponent({
   modalVisible,
   setModalVisible,
 }: ModalComponentProps) {
+  const [count, setCount] = useState<string>('');
+  console.log(count);
+
+  const increment = () => {
+    setCount(prevValue => prevValue + 1);
+  };
   return (
     <>
       <Modal
@@ -72,17 +78,14 @@ export default function ModalComponent({
               }}>
               <TextInput
                 placeholder="Barcode"
-                style={[
-                  {
-                    paddingLeft: 11,
-                    width: wp(78),
-                    marginTop: wp(0.1),
-                    color: Colors.white,
-                    fontFamily: fonts.Montserrat,
-                  },
-                ]}
-                underlineColorAndroid="transparent"
                 placeholderTextColor={Colors.white}
+                style={{
+                  paddingLeft: 11,
+                  width: wp(78),
+                  marginTop: wp(0.1),
+                  color: Colors.white,
+                  fontFamily: fonts.Montserrat,
+                }}
               />
               <Image
                 source={Images.barcode}
@@ -108,27 +111,40 @@ export default function ModalComponent({
               }}>
               <TextInput
                 placeholder="Quantity"
-                keyboardType="number-pad"
-                style={[
-                  {
-                    paddingLeft: 11,
-                    width: wp(78),
-                    marginTop: wp(0.1),
-                    color: Colors.white,
-                    fontFamily: fonts.Montserrat,
-                  },
-                ]}
-                underlineColorAndroid="transparent"
                 placeholderTextColor={Colors.white}
-              />
-              <Image
-                source={Images.barcode}
+                keyboardType="number-pad"
                 style={{
-                  width: wp(7),
-                  height: wp(7),
+                  paddingLeft: 11,
+                  width: wp(78),
+                  marginTop: wp(0.1),
+                  color: Colors.white,
+                  fontFamily: fonts.Montserrat,
                 }}
-                resizeMode="contain"
+                value={count}
+                onChangeText={setCount}
               />
+              <View>
+                <TouchableOpacity onPress={() => increment()}>
+                  <Image
+                    source={Images.pathUp}
+                    style={{
+                      width: wp(4),
+                      height: wp(4),
+                      tintColor: Colors.white,
+                    }}
+                    resizeMode="contain"
+                  />
+                </TouchableOpacity>
+                <Image
+                  source={Images.pathDown}
+                  style={{
+                    width: wp(4),
+                    height: wp(4),
+                    tintColor: Colors.white,
+                  }}
+                  resizeMode="contain"
+                />
+              </View>
             </View>
             <BlankSpacer height={hp(3)} />
             <View

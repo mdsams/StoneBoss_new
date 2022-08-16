@@ -46,6 +46,8 @@ export const Images = {
   back: require('../Assets/Images/eva_arrow.png'),
   delete: require('../Assets/Images/delete.png'),
   close: require('../Assets/Images/close.png'),
+  pathUp: require('../Assets/Images/pathUp.png'),
+  pathDown: require('../Assets/Images/pathDown.png'),
 };
 
 export const Dimension = {
