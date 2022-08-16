@@ -1,23 +1,15 @@
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  ImageBackground,
-  StyleSheet,
-} from 'react-native';
 import React from 'react';
-import {Colors, fonts, Images} from '../../Components/Theme';
+import {View, Text, ImageBackground, StyleSheet} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+
+//Component Called
+import {Colors, fonts, Images} from '../../Components/Theme';
 import BlankSpacer from '../../Components/BlankSpace';
 import Button from '../../Components/Button';
-
-/**
- *
- */
+import {GoBack} from '../../Components/GoBack';
 
 export default function OrderItem() {
   return (
@@ -26,7 +18,9 @@ export default function OrderItem() {
         flex: 1,
         backgroundColor: Colors.white,
       }}>
-      <BlankSpacer height={hp(14)} />
+      <BlankSpacer height={hp(3)} />
+      <GoBack padding={wp(9)} arrowColor={Colors.black} />
+      <BlankSpacer height={hp(6)} />
       <View
         style={{
           justifyContent: 'center',

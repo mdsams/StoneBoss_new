@@ -4,6 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {useNavigation} from '@react-navigation/native';
 
 //Component Called
 import BlankSpacer from '../../Components/BlankSpace';
@@ -12,6 +13,7 @@ import {AuthContext, ctx} from '../../Constants/Context';
 import Button from '../../Components/Button';
 
 const Home = () => {
+  const navigation = useNavigation();
   const {signOut} = useContext<ctx>(AuthContext);
 
   return (
@@ -76,6 +78,7 @@ const Home = () => {
                       color={Colors.buttonRed}
                       textColor={Colors.white}
                       textFontFamily={fonts.Montserrat}
+                      onPress={() => navigation.navigate('ProductAndBarCode')}
                     />
                   </View>
                 </View>
@@ -121,6 +124,7 @@ const Home = () => {
                       color={Colors.buttonRed}
                       textColor={Colors.white}
                       textFontFamily={fonts.Montserrat}
+                      onPress={() => navigation.navigate('Order')}
                     />
                   </View>
                 </View>
@@ -145,23 +149,5 @@ const Home = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  avatar: {
-    width: 70,
-    height: 70,
-  },
-  viewStyle: {
-    margin: '7%',
-    borderRadius: 10,
-    flexDirection: 'row',
-  },
-  textStyle: {
-    fontSize: 22,
-    color: 'black',
-    alignSelf: 'center',
-    marginLeft: 20,
-  },
-});
 
 export default Home;

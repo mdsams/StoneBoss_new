@@ -42,9 +42,10 @@ export const Images = {
   productIcon: require('../Assets/Images/productIcon.png'),
   logout: require('../Assets/Images/logout.png'),
   barcode: require('../Assets/Images/barcode.png'),
-  goBack: require('../Assets/Images/back.png'),
   orderItem: require('../Assets/Images/orderItem.png'),
   rectangle: require('../Assets/Images/Rectangle.png'),
+  back: require('../Assets/Images/eva_arrow.png'),
+  delete: require('../Assets/Images/delete.png'),
 };
 
 export const Dimension = {

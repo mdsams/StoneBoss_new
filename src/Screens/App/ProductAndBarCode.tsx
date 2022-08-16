@@ -1,23 +1,28 @@
 import React, {useState} from 'react';
-import {View, Text, ImageBackground, Image, TextInput} from 'react-native';
+import {View, ImageBackground, Image, TextInput} from 'react-native';
 import {Images, Colors, fonts} from '../../Components/Theme';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {useNavigation} from '@react-navigation/native';
+
+//Components called
 import BlankSpacer from '../../Components/BlankSpace';
-import Input from '../../Components/Input';
 import Button from '../../Components/Button';
-import GoBack from '../../Components/GoBack';
+import {GoBack} from '../../Components/GoBack';
 
 export default function ProductAndBarCode() {
+  const navigation = useNavigation();
   const [productCode, setProductCode] = useState('');
 
   return (
     <ImageBackground
       source={Images.productAndBarCodeBackground}
       style={{flex: 1}}>
-      <BlankSpacer height={hp(6)} />
+      <BlankSpacer height={hp(1)} />
+      <GoBack padding={wp(9)} />
+      <BlankSpacer height={hp(4)} />
       <View
         style={{
           justifyContent: 'center',
@@ -35,9 +40,7 @@ export default function ProductAndBarCode() {
           }}
         />
       </View>
-
-      <BlankSpacer height={hp(8)} />
-
+      <BlankSpacer height={hp(6)} />
       <View
         style={{
           flexDirection: 'row',
@@ -66,7 +69,6 @@ export default function ProductAndBarCode() {
         />
       </View>
       <BlankSpacer height={hp(5)} />
-
       <View
         style={{
           flexDirection: 'row',
@@ -103,7 +105,6 @@ export default function ProductAndBarCode() {
         />
       </View>
       <BlankSpacer height={hp(5)} />
-
       <Button
         text="SAVE & CONTINUE"
         height={hp(6)}
@@ -113,7 +114,7 @@ export default function ProductAndBarCode() {
         textFontFamily={fonts.Montserrat}
         // onPress={() => signOut()}
       />
-      <BlankSpacer height={hp(15)} />
+      <BlankSpacer height={hp(12)} />
       <Button
         text="PREVIEW"
         height={hp(7)}
@@ -121,6 +122,7 @@ export default function ProductAndBarCode() {
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
+        onPress={() => navigation.navigate('ProductListing')}
       />
     </ImageBackground>
   );

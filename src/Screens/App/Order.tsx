@@ -1,22 +1,27 @@
 import React, {useState} from 'react';
-import {View, Text, ImageBackground, Image, TextInput} from 'react-native';
-import {Images, Colors, fonts} from '../../Components/Theme';
+import {View, ImageBackground, Image, TextInput} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {useNavigation} from '@react-navigation/native';
+
+//Component Called
+import {Images, Colors, fonts} from '../../Components/Theme';
 import BlankSpacer from '../../Components/BlankSpace';
-import Input from '../../Components/Input';
 import Button from '../../Components/Button';
-import GoBack from '../../Components/GoBack';
+import {GoBack} from '../../Components/GoBack';
 
 export default function Order() {
+  const navigation = useNavigation();
   const [productCode, setProductCode] = useState('');
 
   return (
     <ImageBackground
       source={Images.productAndBarCodeBackground}
       style={{flex: 1}}>
+      <BlankSpacer height={hp(1)} />
+      <GoBack padding={wp(9)} />
       <BlankSpacer height={hp(6)} />
       <View
         style={{
@@ -82,7 +87,7 @@ export default function Order() {
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
-        // onPress={() => signOut()}
+        onPress={() => navigation.navigate('OrderItem')}
       />
     </ImageBackground>
   );
