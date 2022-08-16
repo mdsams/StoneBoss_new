@@ -12,9 +12,23 @@ import BlankSpacer from '../../Components/BlankSpace';
 import Button from '../../Components/Button';
 import {GoBack} from '../../Components/GoBack';
 
+//offline Data
+import {data} from '../offlineData/data';
+
 export default function ProductAndBarCode() {
+  console.log('====================== from ProductAndCode', data);
   const navigation = useNavigation();
   const [productCode, setProductCode] = useState('');
+  const [barCode, setBarCode] = useState('');
+
+  const dataPush = () => {
+    data.push({
+      ProductCode: productCode,
+      Barcode: barCode,
+    });
+    setProductCode('');
+    setBarCode('');
+  };
 
   return (
     <ImageBackground
@@ -58,7 +72,7 @@ export default function ProductAndBarCode() {
           placeholderTextColor={Colors.white}
           style={{
             paddingLeft: 11,
-            width: wp(78),
+            width: wp(88),
             marginTop: wp(0.1),
             color: Colors.white,
             fontFamily: fonts.Montserrat,
@@ -81,18 +95,17 @@ export default function ProductAndBarCode() {
           height: hp(8),
         }}>
         <TextInput
-          placeholder="Enter Product Details"
-          style={[
-            {
-              paddingLeft: 11,
-              width: wp(78),
-              marginTop: wp(0.1),
-              color: Colors.white,
-              fontFamily: fonts.Montserrat,
-            },
-          ]}
-          underlineColorAndroid="transparent"
+          placeholder="Enter Barcode"
           placeholderTextColor={Colors.white}
+          style={{
+            paddingLeft: 11,
+            width: wp(78),
+            marginTop: wp(0.1),
+            color: Colors.white,
+            fontFamily: fonts.Montserrat,
+          }}
+          value={barCode}
+          onChangeText={setBarCode}
         />
         <Image
           source={Images.barcode}
@@ -111,7 +124,7 @@ export default function ProductAndBarCode() {
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
-        // onPress={() => signOut()}
+        onPress={() => dataPush()}
       />
       <BlankSpacer height={hp(12)} />
       <Button

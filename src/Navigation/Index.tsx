@@ -10,7 +10,7 @@ import SignUp from '../Screens/AuthScreen/SignUp';
 import Home from '../Screens/App/Home';
 import SpalashScreen from '../Screens/SpalashScreen/SpalashScreen';
 import ProductAndBarCode from '../Screens/App/ProductAndBarCode';
-import ProductListing from '../Screens/App/ProductDetails';
+import ProductListing from '../Screens/App/ProductListing';
 import Order from '../Screens/App/Order';
 import OrderItem from '../Screens/App/OrderItem/OrderItem';
 

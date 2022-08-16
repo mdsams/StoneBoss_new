@@ -19,35 +19,7 @@ import {Colors, fonts, Images} from '../../Components/Theme';
 import {GoBack} from '../../Components/GoBack';
 import BlankSpacer from '../../Components/BlankSpace';
 import Button from '../../Components/Button';
-
-const data = [
-  {id: '1', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '2', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '3', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '4', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '5', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '6', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '7', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '8', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '9', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '10', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '11', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '12', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '13', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '14', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '15', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '16', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '17', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '18', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '19', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '20', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '21', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '22', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '23', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '24', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '25', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {id: '26', ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-];
+import {data} from '../offlineData/data';
 
 const ProductDetails = (props: any, index: any) => {
   const rightSwipe = (progress: any, dragX: any) => {
@@ -59,7 +31,7 @@ const ProductDetails = (props: any, index: any) => {
     return (
       <TouchableOpacity
         onPress={() => {
-          props.handleDelete;
+          props.handleDelete();
         }}
         activeOpacity={0.6}>
         <View
@@ -86,8 +58,8 @@ const ProductDetails = (props: any, index: any) => {
                 props.data.id % 2 <= 0 ? Colors.lightgray : Colors.white,
             },
           ]}>
-          <Text style={{color: 'red'}}>{props.data.ProductCode}</Text>
-          <Text style={{color: 'red', marginRight: '10%'}}>
+          <Text style={{color: Colors.black}}>{props.data.ProductCode}</Text>
+          <Text style={{color: Colors.black, marginRight: wp(9)}}>
             {props.data.Barcode}
           </Text>
         </View>
@@ -99,6 +71,7 @@ const ProductDetails = (props: any, index: any) => {
 const ProductListing = () => {
   const navigation = useNavigation();
   const [lists, setLists] = useState(data);
+  console.log('+++++++++++++++++++++++++++', lists);
 
   const deleteItem = (index: any) => {
     const arr = [...lists];
