@@ -16,11 +16,11 @@ import {GoBack} from '../../Components/GoBack';
 import {data} from '../offlineData/data';
 
 export default function ProductAndBarCode() {
-  console.log('====================== from ProductAndCode', data);
   const navigation = useNavigation();
   const [productCode, setProductCode] = useState('');
   const [barCode, setBarCode] = useState('');
 
+  //function for pushing the data in array
   const dataPush = () => {
     data.push({
       ProductCode: productCode,

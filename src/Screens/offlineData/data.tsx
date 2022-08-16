@@ -3,23 +3,4 @@ interface dataProps {
   Barcode: string;
 }
 
-export const data = [
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-  {ProductCode: 'Barcodeheleeocm', Barcode: 'Helooo ajba '},
-];
+export const data: any[] = [];

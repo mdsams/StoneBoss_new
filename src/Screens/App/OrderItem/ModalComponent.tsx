@@ -24,11 +24,14 @@ export default function ModalComponent({
   modalVisible,
   setModalVisible,
 }: ModalComponentProps) {
-  const [count, setCount] = useState<string>('');
+  const [count, setCount] = useState<string>('0');
   console.log(count);
 
   const increment = () => {
-    setCount(prevValue => prevValue + 1);
+    setCount(prevValue => +prevValue + 1 + '');
+  };
+  const decrement = () => {
+    setCount(prevValue => +prevValue - 1 + '');
   };
   return (
     <>
@@ -90,8 +93,8 @@ export default function ModalComponent({
               <Image
                 source={Images.barcode}
                 style={{
-                  width: wp(7),
-                  height: wp(7),
+                  width: wp(9),
+                  height: wp(9),
                 }}
                 resizeMode="contain"
               />
@@ -128,22 +131,24 @@ export default function ModalComponent({
                   <Image
                     source={Images.pathUp}
                     style={{
-                      width: wp(4),
-                      height: wp(4),
+                      width: wp(5),
+                      height: wp(5),
                       tintColor: Colors.white,
                     }}
                     resizeMode="contain"
                   />
                 </TouchableOpacity>
-                <Image
-                  source={Images.pathDown}
-                  style={{
-                    width: wp(4),
-                    height: wp(4),
-                    tintColor: Colors.white,
-                  }}
-                  resizeMode="contain"
-                />
+                <TouchableOpacity onPress={() => decrement()}>
+                  <Image
+                    source={Images.pathDown}
+                    style={{
+                      width: wp(5),
+                      height: wp(5),
+                      tintColor: Colors.white,
+                    }}
+                    resizeMode="contain"
+                  />
+                </TouchableOpacity>
               </View>
             </View>
             <BlankSpacer height={hp(3)} />

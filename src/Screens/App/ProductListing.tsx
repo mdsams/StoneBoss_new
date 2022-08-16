@@ -22,12 +22,7 @@ import Button from '../../Components/Button';
 import {data} from '../offlineData/data';
 
 const ProductDetails = (props: any, index: any) => {
-  const rightSwipe = (progress: any, dragX: any) => {
-    const scale = dragX.interpolate({
-      inputRange: [0, 100],
-      outputRange: [1, 0],
-      extrapolate: 'clamp',
-    });
+  const rightSwipe = () => {
     return (
       <TouchableOpacity
         onPress={() => {
@@ -54,8 +49,7 @@ const ProductDetails = (props: any, index: any) => {
           style={[
             styles.container,
             {
-              backgroundColor:
-                props.data.id % 2 <= 0 ? Colors.lightgray : Colors.white,
+              backgroundColor: 'transparent',
             },
           ]}>
           <Text style={{color: Colors.black}}>{props.data.ProductCode}</Text>
@@ -71,12 +65,13 @@ const ProductDetails = (props: any, index: any) => {
 const ProductListing = () => {
   const navigation = useNavigation();
   const [lists, setLists] = useState(data);
-  console.log('+++++++++++++++++++++++++++', lists);
 
   const deleteItem = (index: any) => {
-    const arr = [...lists];
-    arr.splice(index, 1);
-    setLists(arr);
+    // const arr = JSON.parse(JSON.stringify(lists));
+    // const arr = [...lists];
+    data.splice(index, 1);
+    console.log('----------------------------------array', data);
+    setLists(data);
   };
   return (
     <>
@@ -100,7 +95,11 @@ const ProductListing = () => {
             data={lists}
             renderItem={({item, index}) => {
               return (
-                <View>
+                <View
+                  style={{
+                    backgroundColor:
+                      index % 2 <= 0 ? Colors.lightgray : Colors.white,
+                  }}>
                   <ProductDetails
                     data={item}
                     handleDelete={() => deleteItem(index)}
