@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -21,7 +21,7 @@ import BlankSpacer from '../../Components/BlankSpace';
 import Button from '../../Components/Button';
 import {data} from '../offlineData/data';
 
-const ProductDetails = (props: any, index: any) => {
+const ProductDetails = (props: any) => {
   const rightSwipe = () => {
     return (
       <TouchableOpacity
@@ -67,11 +67,10 @@ const ProductListing = () => {
   const [lists, setLists] = useState(data);
 
   const deleteItem = (index: any) => {
-    // const arr = JSON.parse(JSON.stringify(lists));
-    // const arr = [...lists];
+    const arr = [...lists];
     data.splice(index, 1);
-    console.log('----------------------------------array', data);
-    setLists(data);
+    arr.splice(index, 1);
+    setLists(arr);
   };
   return (
     <>

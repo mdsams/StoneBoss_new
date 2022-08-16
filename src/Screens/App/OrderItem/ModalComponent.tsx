@@ -10,6 +10,9 @@ import BlankSpacer from '../../../Components/BlankSpace';
 import Button from '../../../Components/Button';
 import {Colors, fonts, Images} from '../../../Components/Theme';
 
+//OfflineData
+import {listData} from '../../offlineData/data';
+
 interface ModalComponentProps {
   modalVisible: boolean;
   setModalVisible: any;
@@ -24,8 +27,17 @@ export default function ModalComponent({
   modalVisible,
   setModalVisible,
 }: ModalComponentProps) {
-  const [count, setCount] = useState<string>('0');
-  console.log(count);
+  const [count, setCount] = useState<string>('');
+  const [barCode, setBarCode] = useState<string>('');
+
+  const dataPush = () => {
+    listData.push({
+      Barcode: barCode,
+      Quantity: count,
+    });
+    setBarCode('');
+    setCount('');
+  };
 
   const increment = () => {
     setCount(prevValue => +prevValue + 1 + '');
@@ -89,6 +101,8 @@ export default function ModalComponent({
                   color: Colors.white,
                   fontFamily: fonts.Montserrat,
                 }}
+                value={barCode}
+                onChangeText={setBarCode}
               />
               <Image
                 source={Images.barcode}
@@ -166,6 +180,7 @@ export default function ModalComponent({
                 color={Colors.lightBlue}
                 textColor={Colors.white}
                 textFontFamily={fonts.Montserrat}
+                onPress={() => dataPush()}
               />
               <Button
                 text="CANCEL"

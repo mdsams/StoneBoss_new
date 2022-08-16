@@ -11,6 +11,9 @@ import BlankSpacer from '../../../Components/BlankSpace';
 import Button from '../../../Components/Button';
 import {GoBack} from '../../../Components/GoBack';
 import ModalComponent from './ModalComponent';
+import OrderItemListing from './OrderItemListing';
+
+import {listData} from '../../offlineData/data';
 
 export default function OrderItem() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -20,9 +23,9 @@ export default function OrderItem() {
         flex: 1,
         backgroundColor: Colors.white,
       }}>
-      <BlankSpacer height={hp(3)} />
-      <GoBack padding={wp(9)} arrowColor={Colors.black} />
-      <BlankSpacer height={hp(6)} />
+      <BlankSpacer height={hp(1)} />
+      <GoBack padding={wp(7)} arrowColor={Colors.black} />
+      <BlankSpacer height={hp(2)} />
       <View
         style={{
           justifyContent: 'center',
@@ -31,7 +34,7 @@ export default function OrderItem() {
         <ImageBackground
           source={Images.orderItem}
           style={{
-            height: hp(35),
+            height: hp(28),
             width: wp(90),
           }}
           imageStyle={{
@@ -41,18 +44,18 @@ export default function OrderItem() {
           <ImageBackground
             source={Images.rectangle}
             style={{
-              height: hp(35),
+              height: hp(28),
               width: wp(90),
             }}
             imageStyle={{
               borderRadius: hp(5),
             }}>
-            <BlankSpacer height={hp(6)} />
+            <BlankSpacer height={hp(4)} />
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                padding: 15,
+                padding: 10,
               }}>
               <View
                 style={{
@@ -86,7 +89,7 @@ export default function OrderItem() {
         </ImageBackground>
       </View>
 
-      <BlankSpacer height={hp(7)} />
+      <BlankSpacer height={hp(4)} />
       <Button
         text="SCAN ITEMS"
         height={hp(6)}
@@ -96,12 +99,14 @@ export default function OrderItem() {
         textFontFamily={fonts.Montserrat}
         onPress={() => setModalVisible(!modalVisible)}
       />
+      <BlankSpacer height={hp(4)} />
       {modalVisible ? (
         <ModalComponent
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
         />
       ) : null}
+      {listData[0] !== undefined ? <OrderItemListing /> : null}
     </View>
   );
 }

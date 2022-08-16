@@ -3,4 +3,6 @@ interface dataProps {
   Barcode: string;
 }
 
-export const data: any[] = [];
+export const data: dataProps[] = [];
+
+export const listData: any[] = [];
