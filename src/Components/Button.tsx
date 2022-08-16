@@ -88,7 +88,7 @@ const Button = ({
       text: {
         color: textColor ? textColor : '#fff',
         fontSize: textFontSize ? textFontSize : wp(4.4),
-        fontFamily: textFontFamily ? textFontFamily : fonts.PoppinsMedium,
+        fontFamily: textFontFamily ? textFontFamily : fonts.Montserrat,
         // textAlign: 'center',
       },
     },

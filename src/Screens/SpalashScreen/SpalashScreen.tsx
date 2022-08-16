@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ImageBackground} from 'react-native';
+import {ImageBackground} from 'react-native';
 import {Images} from '../../Components/Theme';
 
 export default function SpalashScreen() {

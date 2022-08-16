@@ -28,15 +28,14 @@ const App = () => {
 
   return (
     <>
-      {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <AuthContext.Provider
         value={{
           State,
           ...Dispatchers,
         }}>
         <Navigation />
-      </AuthContext.Provider> */}
-      <OrderItem />
+      </AuthContext.Provider>
     </>
   );
 };

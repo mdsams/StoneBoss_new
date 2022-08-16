@@ -7,7 +7,7 @@ import {AuthContext, ctx} from '../Constants/Context';
 //Screens
 import SignIn from '../Screens/AuthScreen/SignIn';
 import SignUp from '../Screens/AuthScreen/SignUp';
-import Home from '../Screens/App/FirstPage';
+import Home from '../Screens/App/Home';
 import SpalashScreen from '../Screens/SpalashScreen/SpalashScreen';
 
 const Stack = createStackNavigator();

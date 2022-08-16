@@ -1,27 +1,25 @@
 import React, {useContext, useState} from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  ImageBackground,
-} from 'react-native';
+import {View, Text, Image, ImageBackground} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {useNavigation} from '@react-navigation/native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
+//Components called
 import BlankSpacer from '../../Components/BlankSpace';
 import Input from '../../Components/Input';
 import {Colors, fonts, Images} from '../../Components/Theme';
 import {userSignIn} from '../../Api/authService';
 import {AuthContext, ctx} from '../../Constants/Context';
+import Button from '../../Components/Button';
 
+/**
+ * For User Sign In
+ *
+ * @returns jsx elements
+ */
 export default function SignIn() {
-  const navigation = useNavigation();
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [hidePass, setHidePass] = useState(true);
@@ -67,11 +65,11 @@ export default function SignIn() {
             style={{
               textAlign: 'center',
               fontFamily: fonts.Montserrat,
-              fontSize: wp(17),
+              fontSize: wp(15),
               color: Colors.white,
               lineHeight: wp(14.5),
             }}>
-            Log In
+            LOG IN
           </Text>
 
           <BlankSpacer height={hp(1)} />
@@ -109,26 +107,15 @@ export default function SignIn() {
 
           <BlankSpacer height={hp(5)} />
 
-          <TouchableOpacity
-            style={{
-              backgroundColor: Colors.buttonRed,
-              height: hp(6),
-              width: wp(80),
-              justifyContent: 'center',
-              alignItems: 'center',
-              alignSelf: 'center',
-            }}
-            activeOpacity={0.8}
-            onPress={() => doSignIn()}>
-            <Text
-              style={{
-                fontSize: 18,
-                lineHeight: wp(8),
-                color: Colors.white,
-              }}>
-              Log In
-            </Text>
-          </TouchableOpacity>
+          <Button
+            text="SIGN IN"
+            height={hp(7)}
+            width={wp(80)}
+            color={Colors.buttonRed}
+            textColor={Colors.white}
+            textFontFamily={fonts.Montserrat}
+            onPress={() => doSignIn()}
+          />
         </KeyboardAwareScrollView>
       </ImageBackground>
     </>
