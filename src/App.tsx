@@ -1,12 +1,10 @@
 import React from 'react';
-import {Text, View, ActivityIndicator} from 'react-native';
 import {StatusBar, useColorScheme} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 import Navigation from './Navigation/Index';
 import useCachedResources from './appState/CachedResources';
 import {AuthContext} from './Constants/Context';
-import OrderItem from './Screens/App/OrderItem/OrderItem';
+import {Colors} from './Components/Theme';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -28,7 +26,12 @@ const App = () => {
 
   return (
     <>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar
+        barStyle="light-content"
+        hidden={false}
+        backgroundColor={Colors.lightgray}
+        translucent={false}
+      />
       <AuthContext.Provider
         value={{
           State,
