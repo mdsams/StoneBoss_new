@@ -72,9 +72,10 @@ const Home = () => {
                   </View>
                   <View>
                     <Button
-                      text="Update Barcode"
+                      text="UPDATE BARCODE"
                       height={hp(6.5)}
                       width={wp(43)}
+                      textFontSize={wp(3.5)}
                       color={Colors.buttonRed}
                       textColor={Colors.white}
                       textFontFamily={fonts.Montserrat}
@@ -118,9 +119,10 @@ const Home = () => {
                   </View>
                   <View>
                     <Button
-                      text="Update Order"
+                      text="UPDATE ORDER"
                       height={hp(6.5)}
                       width={wp(43)}
+                      textFontSize={wp(4)}
                       color={Colors.buttonRed}
                       textColor={Colors.white}
                       textFontFamily={fonts.Montserrat}
@@ -133,16 +135,16 @@ const Home = () => {
           </View>
           <BlankSpacer height={hp(3)} />
           <Button
-            text="LogOut"
+            text="LOG OUT"
             height={hp(7)}
-            width={wp(75)}
+            width={wp(83)}
             color={Colors.buttonRed}
             textColor={Colors.white}
             textFontFamily={fonts.Montserrat}
             onPress={() => signOut()}
             imageRight={Images.logout}
-            imgHeight={wp(6)}
-            imgWidth={wp(6)}
+            imgHeight={wp(7)}
+            imgWidth={wp(7)}
           />
         </View>
       </View>

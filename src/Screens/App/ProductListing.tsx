@@ -83,7 +83,7 @@ const ProductListing = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingLeft: wp(4),
-            paddingRight: wp(15),
+            paddingRight: wp(4),
           }}>
           <Text style={styles.textHeadingStyle}>Product Code</Text>
           <Text style={styles.textHeadingStyle}>Barcode#</Text>

@@ -35,6 +35,7 @@ const ProductDetails = (props: any) => {
 };
 
 const OrderItemListing = () => {
+  const navigation = useNavigation();
   return (
     <>
       <View style={{padding: 15}}>
@@ -43,7 +44,7 @@ const OrderItemListing = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingLeft: wp(4),
-            paddingRight: wp(15),
+            paddingRight: wp(4),
           }}>
           <Text style={styles.textHeadingStyle}>Barcode#</Text>
           <Text style={styles.textHeadingStyle}>Quantity</Text>
@@ -71,11 +72,11 @@ const OrderItemListing = () => {
           <Button
             text="FINISH"
             height={hp(6)}
-            width={wp(63)}
+            width={wp(87)}
             color={Colors.buttonRed}
             textColor={Colors.white}
             textFontFamily={fonts.Montserrat}
-            // onPress={}
+            onPress={() => navigation.navigate('Home')}
           />
         </View>
       </View>

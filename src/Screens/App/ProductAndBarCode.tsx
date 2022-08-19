@@ -35,8 +35,8 @@ export default function ProductAndBarCode() {
       source={Images.productAndBarCodeBackground}
       style={{flex: 1}}>
       <BlankSpacer height={hp(1)} />
-      <GoBack padding={wp(9)} />
-      <BlankSpacer height={hp(4)} />
+      <GoBack padding={wp(6)} />
+      <BlankSpacer height={hp(3)} />
       <View
         style={{
           justifyContent: 'center',
@@ -54,7 +54,7 @@ export default function ProductAndBarCode() {
           }}
         />
       </View>
-      <BlankSpacer height={hp(6)} />
+      <BlankSpacer height={hp(5)} />
       <View
         style={{
           flexDirection: 'row',
@@ -119,18 +119,19 @@ export default function ProductAndBarCode() {
       <BlankSpacer height={hp(5)} />
       <Button
         text="SAVE & CONTINUE"
+        textFontSize={wp(4)}
         height={hp(6)}
-        width={wp(63)}
+        width={wp(60)}
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
         onPress={() => dataPush()}
       />
-      <BlankSpacer height={hp(12)} />
+      <BlankSpacer height={hp(14)} />
       <Button
         text="PREVIEW"
         height={hp(7)}
-        width={wp(80)}
+        width={wp(87)}
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}

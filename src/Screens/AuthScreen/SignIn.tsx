@@ -113,7 +113,7 @@ export default function SignIn() {
           <Button
             text="SIGN IN"
             height={hp(7)}
-            width={wp(80)}
+            width={wp(87)}
             color={Colors.buttonRed}
             textColor={Colors.white}
             textFontFamily={fonts.Montserrat}

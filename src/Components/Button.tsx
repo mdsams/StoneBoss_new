@@ -60,22 +60,17 @@ const Button = ({
         width: width ? width : wp(90),
         height: height ? height : hp(6.3),
         backgroundColor: color ? color : Colors.saloginbtnback,
-        justifyContent: imageLeft || imageRight ? 'space-between' : 'center',
+        justifyContent: imageLeft || imageRight ? 'space-evenly' : 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        borderRadius: borderRadius ? borderRadius : wp(2),
+        borderRadius: borderRadius ? borderRadius : wp(1),
         alignSelf: alignSelf,
         borderWidth: borderWidth ? borderWidth : null,
         borderColor: borderColor ? borderColor : null,
         paddingHorizontal: imageLeft || imageRight ? wp(20) : 0,
       },
       shadowEffwct: {
-        // shadowColor: color?color:'transparent',
-        // shadowOffset: { width: 0, height: 3 },
-        // shadowOpacity: .1,
-        // shadowRadius: wp(5),
-        // elevation: 5,
-        shadowColor: '#000',
+        shadowColor: '#000' ? color : 'transparent',
         shadowOffset: {
           width: 0,
           height: 5,
@@ -89,7 +84,6 @@ const Button = ({
         color: textColor ? textColor : '#fff',
         fontSize: textFontSize ? textFontSize : wp(4.4),
         fontFamily: textFontFamily ? textFontFamily : fonts.Montserrat,
-        // textAlign: 'center',
       },
     },
   });
@@ -132,7 +126,7 @@ const Button = ({
           style={{
             width: imgWidth ? imgWidth : 0,
             height: imgHeight ? imgHeight : 0,
-            marginLeft: wp(2),
+            marginLeft: wp(-3),
             tintColor: tintColor ? tintColor : null,
           }}
         />
