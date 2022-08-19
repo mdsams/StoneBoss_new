@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "StoneBoss.app"
-               BlueprintName = "StoneBoss"
-               ReferencedContainer = "container:StoneBoss.xcodeproj">
+               BuildableName = "Stone Boss.app"
+               BlueprintName = "Stone Boss"
+               ReferencedContainer = "container:Stone Boss.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
                BuildableName = "StoneBossTests.xctest"
                BlueprintName = "StoneBossTests"
-               ReferencedContainer = "container:StoneBoss.xcodeproj">
+               ReferencedContainer = "container:Stone Boss.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StoneBoss.app"
-            BlueprintName = "StoneBoss"
-            ReferencedContainer = "container:StoneBoss.xcodeproj">
+            BuildableName = "Stone Boss.app"
+            BlueprintName = "Stone Boss"
+            ReferencedContainer = "container:Stone Boss.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StoneBoss.app"
-            BlueprintName = "StoneBoss"
-            ReferencedContainer = "container:StoneBoss.xcodeproj">
+            BuildableName = "Stone Boss.app"
+            BlueprintName = "Stone Boss"
+            ReferencedContainer = "container:Stone Boss.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
