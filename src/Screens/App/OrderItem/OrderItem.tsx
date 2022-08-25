@@ -21,7 +21,6 @@ export default function OrderItem({route}: any) {
   const [modalVisible, setModalVisible] = useState(false);
   const {productDescription} = route.params;
   const requiredData = productDescription.order[0];
-  console.log('====================', requiredData);
 
   return (
     <View
@@ -118,6 +117,7 @@ export default function OrderItem({route}: any) {
         <ModalComponent
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
+          itemsData={requiredData.items}
         />
       ) : null}
       {listData[0] !== undefined ? <OrderItemListing /> : null}

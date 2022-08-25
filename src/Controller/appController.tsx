@@ -59,15 +59,23 @@ export async function getOrderDetails(salesOrder: string) {
   }
 }
 
-export async function updateOrderDetails() {
+interface orderDataInterface {
+  prodCode: string;
+  quantity: number;
+}
+export async function updateOrderDetails(
+  orderNo: string,
+  orderUpdate: orderDataInterface[],
+) {
   try {
-    const response = await fetch(`${OrderData}update-order-item/476319`, {
-      method: 'GET',
+    const response = await fetch(`${OrderData}update-order-item/${orderNo}`, {
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({items: orderUpdate}),
     });
-    const {data} = await response.json();
+    const data = await response.json();
     return data;
   } catch (error) {
     console.error(error);

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
+import {View, Text, StyleSheet, FlatList, Alert} from 'react-native';
 import {GestureHandlerRootView, Swipeable} from 'react-native-gesture-handler';
 import {
   widthPercentageToDP as wp,
@@ -13,6 +13,10 @@ import {listData} from '../../offlineData/data';
 import Button from '../../../Components/Button';
 import BlankSpacer from '../../../Components/BlankSpace';
 
+//API Call
+
+import {updateOrderDetails} from '../../../Controller/appController';
+
 const ProductDetails = (props: any) => {
   return (
     <GestureHandlerRootView>
@@ -24,9 +28,9 @@ const ProductDetails = (props: any) => {
               backgroundColor: 'transparent',
             },
           ]}>
-          <Text style={{color: Colors.black}}>{props.data.BarCode}</Text>
+          <Text style={{color: Colors.black}}>{props.data.prodCode}</Text>
           <Text style={{color: Colors.black, marginRight: wp(9)}}>
-            {props.data.Quantity}
+            {props.data.quantity}
           </Text>
         </View>
       </Swipeable>
@@ -36,6 +40,14 @@ const ProductDetails = (props: any) => {
 
 const OrderItemListing = () => {
   const navigation = useNavigation();
+  const finishOrderUpdate = async () => {
+    const data = await updateOrderDetails('476319', listData);
+    if (data?.serverResponse?.code === 200) {
+      Alert.alert('Order updated successfully');
+    }
+    navigation.navigate('Home');
+  };
+
   return (
     <>
       <View style={{padding: 15}}>
@@ -46,7 +58,7 @@ const OrderItemListing = () => {
             paddingLeft: wp(4),
             paddingRight: wp(4),
           }}>
-          <Text style={styles.textHeadingStyle}>BarCode#</Text>
+          <Text style={styles.textHeadingStyle}>Product Code</Text>
           <Text style={styles.textHeadingStyle}>Quantity</Text>
         </View>
         <View style={{padding: 6, height: hp(37)}}>
@@ -76,7 +88,7 @@ const OrderItemListing = () => {
             color={Colors.buttonRed}
             textColor={Colors.white}
             textFontFamily={fonts.Montserrat}
-            onPress={() => navigation.navigate('Home')}
+            onPress={() => finishOrderUpdate()}
           />
         </View>
       </View>
