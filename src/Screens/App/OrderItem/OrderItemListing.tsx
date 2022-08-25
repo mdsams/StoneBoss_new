@@ -24,7 +24,7 @@ const ProductDetails = (props: any) => {
               backgroundColor: 'transparent',
             },
           ]}>
-          <Text style={{color: Colors.black}}>{props.data.Barcode}</Text>
+          <Text style={{color: Colors.black}}>{props.data.BarCode}</Text>
           <Text style={{color: Colors.black, marginRight: wp(9)}}>
             {props.data.Quantity}
           </Text>
@@ -46,7 +46,7 @@ const OrderItemListing = () => {
             paddingLeft: wp(4),
             paddingRight: wp(4),
           }}>
-          <Text style={styles.textHeadingStyle}>Barcode#</Text>
+          <Text style={styles.textHeadingStyle}>BarCode#</Text>
           <Text style={styles.textHeadingStyle}>Quantity</Text>
         </View>
         <View style={{padding: 6, height: hp(37)}}>

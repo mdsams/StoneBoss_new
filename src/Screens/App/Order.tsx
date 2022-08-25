@@ -12,9 +12,18 @@ import BlankSpacer from '../../Components/BlankSpace';
 import Button from '../../Components/Button';
 import {GoBack} from '../../Components/GoBack';
 
+//API Called
+import {getOrderDetails} from '../../Controller/appController';
+
 export default function Order() {
   const navigation = useNavigation();
-  const [productCode, setProductCode] = useState('');
+  const [salesOrder, setSalesOrder] = useState('');
+
+  const OrderDetails = async () => {
+    if (salesOrder !== '') {
+      const productDescription = await getOrderDetails(salesOrder);
+    }
+  };
 
   return (
     <ImageBackground
@@ -68,6 +77,8 @@ export default function Order() {
           ]}
           underlineColorAndroid="transparent"
           placeholderTextColor={Colors.white}
+          value={salesOrder}
+          onChangeText={setSalesOrder}
         />
         <Image
           source={Images.barcode}

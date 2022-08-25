@@ -1,6 +1,7 @@
 interface dataProps {
-  ProductCode: string;
-  Barcode: string;
+  ProdCode: string;
+  BarCode: string;
+  ProductDescription: string;
 }
 
 export const data: dataProps[] = [];

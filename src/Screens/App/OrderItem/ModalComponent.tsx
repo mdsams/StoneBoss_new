@@ -32,7 +32,7 @@ export default function ModalComponent({
 
   const dataPush = () => {
     listData.push({
-      Barcode: barCode,
+      BarCode: barCode,
       Quantity: count,
     });
     setBarCode('');
@@ -92,7 +92,7 @@ export default function ModalComponent({
                 height: hp(8),
               }}>
               <TextInput
-                placeholder="Barcode"
+                placeholder="BarCode"
                 placeholderTextColor={Colors.white}
                 style={{
                   paddingLeft: 11,

@@ -15,19 +15,32 @@ import {GoBack} from '../../Components/GoBack';
 //offline Data
 import {data} from '../offlineData/data';
 
+//API url
+import {getProductDetails} from '../../Controller/appController';
+
 export default function ProductAndBarCode() {
   const navigation = useNavigation();
   const [productCode, setProductCode] = useState('');
   const [barCode, setBarCode] = useState('');
 
   //function for pushing the data in array
-  const dataPush = () => {
-    data.push({
-      ProductCode: productCode,
-      Barcode: barCode,
-    });
-    setProductCode('');
-    setBarCode('');
+  const dataPush = async () => {
+    if (productCode !== '' || barCode !== '') {
+      const productDescription = await getProductDetails(productCode);
+      if (productDescription !== undefined) {
+        const requiredProductDescription = productDescription.find(
+          (x: any) => x.ProdCode === productCode,
+        );
+
+        data.push({
+          ProdCode: productCode,
+          BarCode: barCode,
+          ProductDescription: requiredProductDescription.Description,
+        });
+      }
+      setProductCode('');
+      setBarCode('');
+    }
   };
 
   return (
@@ -95,7 +108,7 @@ export default function ProductAndBarCode() {
           height: hp(8),
         }}>
         <TextInput
-          placeholder="Enter Barcode"
+          placeholder="Enter BarCode"
           placeholderTextColor={Colors.white}
           style={{
             paddingLeft: 11,

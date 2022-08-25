@@ -21,6 +21,9 @@ import BlankSpacer from '../../Components/BlankSpace';
 import Button from '../../Components/Button';
 import {data} from '../offlineData/data';
 
+//API Calling
+import {postProductDetails} from '../../Controller/appController';
+
 const ProductDetails = (props: any) => {
   const rightSwipe = () => {
     return (
@@ -52,9 +55,14 @@ const ProductDetails = (props: any) => {
               backgroundColor: 'transparent',
             },
           ]}>
-          <Text style={{color: Colors.black}}>{props.data.ProductCode}</Text>
-          <Text style={{color: Colors.black, marginRight: wp(9)}}>
-            {props.data.Barcode}
+          <Text style={{color: Colors.black}}>{props.data.ProdCode}</Text>
+          <Text style={{color: Colors.black, marginRight: wp(2)}}>
+            {props.data.BarCode}
+          </Text>
+        </View>
+        <View>
+          <Text style={{color: Colors.black, marginLeft: wp(5)}}>
+            {props.data.ProductDescription}
           </Text>
         </View>
       </Swipeable>
@@ -65,6 +73,15 @@ const ProductDetails = (props: any) => {
 const ProductListing = () => {
   const navigation = useNavigation();
   const [lists, setLists] = useState(data);
+
+  const FinishPostProductDetails = async () => {
+    const arr = [...lists];
+    arr.forEach((object: any) => {
+      delete object['ProductDescription'];
+    });
+    postProductDetails(arr);
+    navigation.navigate('Home');
+  };
 
   const deleteItem = (index: any) => {
     const arr = [...lists];
@@ -86,7 +103,7 @@ const ProductListing = () => {
             paddingRight: wp(4),
           }}>
           <Text style={styles.textHeadingStyle}>Product Code</Text>
-          <Text style={styles.textHeadingStyle}>Barcode#</Text>
+          <Text style={styles.textHeadingStyle}>BarCode#</Text>
         </View>
         <View style={{padding: 6, height: hp(70)}}>
           <FlatList
@@ -119,7 +136,8 @@ const ProductListing = () => {
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
-        onPress={() => navigation.navigate('Home')}
+        // onPress={() => navigation.navigate('Home')}
+        onPress={() => FinishPostProductDetails()}
       />
     </>
   );
