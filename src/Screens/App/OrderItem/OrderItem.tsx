@@ -4,6 +4,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import {useNavigation} from '@react-navigation/native';
 
 //Component Called
 import {Colors, fonts, Images} from '../../../Components/Theme';
@@ -14,9 +15,14 @@ import ModalComponent from './ModalComponent';
 import OrderItemListing from './OrderItemListing';
 
 import {listData} from '../../offlineData/data';
+import {dateFormat} from '../../../Constants/DateFormatter';
 
-export default function OrderItem() {
+export default function OrderItem({route}: any) {
   const [modalVisible, setModalVisible] = useState(false);
+  const {productDescription} = route.params;
+  const requiredData = productDescription.order[0];
+  console.log('====================', requiredData);
+
   return (
     <View
       style={{
@@ -73,16 +79,24 @@ export default function OrderItem() {
                 <Text style={styles.orderDetailsType}>Total Amount</Text>
               </View>
               <View style={{flexDirection: 'column'}}>
-                <Text style={styles.orderDetailsValue}>#bhvhjvbojojokhi</Text>
+                <Text style={styles.orderDetailsValue}>
+                  {requiredData['sales order']}
+                </Text>
                 <BlankSpacer height={hp(2)} />
 
-                <Text style={styles.orderDetailsValue}>DAVID JHONSON</Text>
+                <Text style={styles.orderDetailsValue}>
+                  {requiredData['Customer Name']}
+                </Text>
                 <BlankSpacer height={hp(2)} />
 
-                <Text style={styles.orderDetailsValue}>07/08/2022</Text>
+                <Text style={styles.orderDetailsValue}>
+                  {dateFormat(requiredData['Order Date'], 'dd-MM-yyyy')}
+                </Text>
                 <BlankSpacer height={hp(2)} />
 
-                <Text style={styles.orderDetailsValue}>$565.00</Text>
+                <Text style={styles.orderDetailsValue}>
+                  ${requiredData?.Total}
+                </Text>
               </View>
             </View>
           </ImageBackground>

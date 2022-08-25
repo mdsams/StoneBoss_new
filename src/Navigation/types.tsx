@@ -24,7 +24,7 @@ export type RootStackParamList = {
   ProductAndBarCode: undefined;
   ProductListing: undefined;
   Order: undefined;
-  OrderItem: undefined;
+  OrderItem: any;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =

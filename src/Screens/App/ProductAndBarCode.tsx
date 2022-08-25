@@ -27,11 +27,11 @@ export default function ProductAndBarCode() {
   const dataPush = async () => {
     if (productCode !== '' || barCode !== '') {
       const productDescription = await getProductDetails(productCode);
+      console.log('=========', productDescription);
       if (productDescription !== undefined) {
         const requiredProductDescription = productDescription.find(
           (x: any) => x.ProdCode === productCode,
         );
-
         data.push({
           ProdCode: productCode,
           BarCode: barCode,

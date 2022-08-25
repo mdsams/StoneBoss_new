@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, ImageBackground, Image, TextInput} from 'react-native';
+import {View, ImageBackground, Image, TextInput, Alert} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -22,6 +22,13 @@ export default function Order() {
   const OrderDetails = async () => {
     if (salesOrder !== '') {
       const productDescription = await getOrderDetails(salesOrder);
+      if (productDescription?.order.length !== 0) {
+        navigation.navigate('OrderItem', {productDescription});
+        setSalesOrder('');
+        console.log(productDescription.order);
+      } else {
+        Alert.alert('Order Not Found');
+      }
     }
   };
 
@@ -76,6 +83,7 @@ export default function Order() {
             },
           ]}
           underlineColorAndroid="transparent"
+          keyboardType="number-pad"
           placeholderTextColor={Colors.white}
           value={salesOrder}
           onChangeText={setSalesOrder}
@@ -98,7 +106,7 @@ export default function Order() {
         color={Colors.buttonRed}
         textColor={Colors.white}
         textFontFamily={fonts.Montserrat}
-        onPress={() => navigation.navigate('OrderItem')}
+        onPress={() => OrderDetails()}
       />
     </ImageBackground>
   );
