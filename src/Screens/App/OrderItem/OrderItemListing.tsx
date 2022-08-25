@@ -38,10 +38,13 @@ const ProductDetails = (props: any) => {
   );
 };
 
-const OrderItemListing = () => {
+const OrderItemListing = ({requiredData}: any) => {
   const navigation = useNavigation();
   const finishOrderUpdate = async () => {
-    const data = await updateOrderDetails('476319', listData);
+    const data = await updateOrderDetails(
+      requiredData['sales order'],
+      listData,
+    );
     if (data?.serverResponse?.code === 200) {
       Alert.alert('Order updated successfully');
     }

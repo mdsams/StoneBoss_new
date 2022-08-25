@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, ImageBackground, Image, TextInput} from 'react-native';
+import {View, ImageBackground, Image, TextInput, Alert} from 'react-native';
 import {Images, Colors, fonts} from '../../Components/Theme';
 import {
   widthPercentageToDP as wp,
@@ -27,7 +27,9 @@ export default function ProductAndBarCode() {
   const dataPush = async () => {
     if (productCode !== '' || barCode !== '') {
       const productDescription = await getProductDetails(productCode);
-      console.log('=========', productDescription);
+      if (!productDescription) {
+        Alert.alert('Product Not Found');
+      }
       if (productDescription !== undefined) {
         const requiredProductDescription = productDescription.find(
           (x: any) => x.ProdCode === productCode,

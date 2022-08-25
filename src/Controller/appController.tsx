@@ -13,7 +13,6 @@ export async function getProductDetails(productCode: string) {
     );
     const data = await response.json();
     if (data?.product.length !== 0) {
-      console.log(data);
       return data?.product;
     }
   } catch (error) {

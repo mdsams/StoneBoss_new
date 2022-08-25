@@ -120,7 +120,9 @@ export default function OrderItem({route}: any) {
           itemsData={requiredData.items}
         />
       ) : null}
-      {listData[0] !== undefined ? <OrderItemListing /> : null}
+      {listData[0] !== undefined ? (
+        <OrderItemListing requiredData={requiredData} />
+      ) : null}
     </View>
   );
 }

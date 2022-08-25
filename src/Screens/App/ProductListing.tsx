@@ -61,7 +61,12 @@ const ProductDetails = (props: any) => {
           </Text>
         </View>
         <View>
-          <Text style={{color: Colors.black, marginLeft: wp(5)}}>
+          <Text
+            style={{
+              color: Colors.black,
+              marginLeft: wp(7),
+              marginBottom: hp(1),
+            }}>
             {props.data.ProductDescription}
           </Text>
         </View>
