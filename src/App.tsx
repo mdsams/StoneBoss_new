@@ -1,5 +1,6 @@
-import React from 'react';
-import {StatusBar, useColorScheme} from 'react-native';
+import React, {useEffect} from 'react';
+import {Alert, StatusBar, useColorScheme} from 'react-native';
+import {Camera} from 'react-native-vision-camera';
 
 import Navigation from './Navigation/Index';
 import useCachedResources from './appState/CachedResources';
@@ -10,6 +11,23 @@ const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const {State, Dispatchers} = useCachedResources();
+
+  const checkCameraPermission = async () => {
+    let status = await Camera.getCameraPermissionStatus();
+    if (status !== 'authorized') {
+      await Camera.requestCameraPermission();
+      status = await Camera.getCameraPermissionStatus();
+      if (status === 'denied') {
+        Alert.alert(
+          'You will not be able to scan if you do not allow camera access',
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    checkCameraPermission();
+  }, []);
 
   // const backgroundStyle = {
   //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,

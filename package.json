@@ -20,13 +20,17 @@
     "react": "18.0.0",
     "react-native": "0.69.3",
     "react-native-gesture-handler": "^2.5.0",
+    "react-native-hole-view": "^2.1.1",
     "react-native-image-picker": "^4.8.5",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-reanimated": "^2.10.0",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "^4.3.1",
     "react-native-screens": "^3.15.0",
     "react-native-vector-icons": "^9.2.0",
-    "reactcss": "^1.2.3"
+    "react-native-vision-camera": "^2.14.1",
+    "reactcss": "^1.2.3",
+    "vision-camera-code-scanner": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

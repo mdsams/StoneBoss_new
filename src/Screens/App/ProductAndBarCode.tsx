@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
-import {View, ImageBackground, Image, TextInput, Alert} from 'react-native';
+import {
+  View,
+  ImageBackground,
+  Image,
+  TextInput,
+  Alert,
+  TouchableOpacity,
+} from 'react-native';
 import {Images, Colors, fonts} from '../../Components/Theme';
 import {
   widthPercentageToDP as wp,
@@ -17,6 +24,7 @@ import {data} from '../offlineData/data';
 
 //API url
 import {getProductDetails} from '../../Controller/appController';
+import Scanner from '../../Scanner/Scanner';
 
 export default function ProductAndBarCode() {
   const navigation = useNavigation();
@@ -122,14 +130,16 @@ export default function ProductAndBarCode() {
           value={barCode}
           onChangeText={setBarCode}
         />
-        <Image
-          source={Images.barcode}
-          style={{
-            width: wp(7),
-            height: wp(7),
-          }}
-          resizeMode="contain"
-        />
+        <TouchableOpacity onPress={() => <Scanner />}>
+          <Image
+            source={Images.barcode}
+            style={{
+              width: wp(7),
+              height: wp(7),
+            }}
+            resizeMode="contain"
+          />
+        </TouchableOpacity>
       </View>
       <BlankSpacer height={hp(5)} />
       <Button
