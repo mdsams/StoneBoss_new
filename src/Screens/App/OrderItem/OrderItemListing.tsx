@@ -44,6 +44,7 @@ const OrderItemListing = ({requiredData}: any) => {
     const data = await updateOrderDetails(
       requiredData['sales order'],
       listData,
+      requiredData?.Location,
     );
     if (data?.serverResponse?.code === 200) {
       Alert.alert('Order updated successfully');

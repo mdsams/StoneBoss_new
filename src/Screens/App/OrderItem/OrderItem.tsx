@@ -117,7 +117,7 @@ export default function OrderItem({route}: any) {
         <ModalComponent
           modalVisible={modalVisible}
           setModalVisible={setModalVisible}
-          itemsData={requiredData.items}
+          itemsData={requiredData}
         />
       ) : null}
       {listData[0] !== undefined ? (

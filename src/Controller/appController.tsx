@@ -65,14 +65,16 @@ interface orderDataInterface {
 export async function updateOrderDetails(
   orderNo: string,
   orderUpdate: orderDataInterface[],
+  location: string,
 ) {
+  console.log({orderNo, orderUpdate, location});
   try {
     const response = await fetch(`${OrderData}update-order-item/${orderNo}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({items: orderUpdate}),
+      body: JSON.stringify({location: location, items: orderUpdate}),
     });
     const data = await response.json();
     return data;

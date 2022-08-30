@@ -23,7 +23,3 @@ export function dateFormat(inputDate: string, format: string) {
 
   return format;
 }
-
-console.log(
-  'Converted date: ' + dateFormat('2021-02-24T00:00:00.000Z', 'MM-dd-yyyy'),
-);

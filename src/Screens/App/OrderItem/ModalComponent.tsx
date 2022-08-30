@@ -26,10 +26,16 @@ interface requiredItemDataProps {
   'Product Description'?: string;
   QuantityOrdered: number;
 }
+
+interface itemsprops {
+  items: requiredItemDataProps[];
+  Location: string;
+}
+
 interface ModalComponentProps {
   modalVisible: boolean;
   setModalVisible: any;
-  itemsData: requiredItemDataProps[];
+  itemsData: itemsprops;
 }
 
 /**
@@ -47,7 +53,7 @@ export default function ModalComponent({
   const [count, setCount] = useState<string>('0');
 
   const Next = () => {
-    let requiredItemData: any = itemsData.find((requiredBarCode: any) => {
+    let requiredItemData: any = itemsData.items.find((requiredBarCode: any) => {
       return requiredBarCode?.BarCode === barCode;
     });
     if (!requiredItemData) {
