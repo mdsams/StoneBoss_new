@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
+  Alert,
 } from 'react-native';
 import {GestureHandlerRootView, Swipeable} from 'react-native-gesture-handler';
 import {
@@ -80,12 +81,17 @@ const ProductListing = () => {
   const [lists, setLists] = useState(data);
 
   const FinishPostProductDetails = async () => {
-    const arr = [...lists];
-    arr.forEach((object: any) => {
+    lists.forEach((object: any) => {
       delete object['ProductDescription'];
     });
-    postProductDetails(arr);
-    navigation.navigate('Home');
+    const data = await postProductDetails(lists);
+    if (data?.serverResponse?.code === 200) {
+      while (lists.length > 0) {
+        lists.pop();
+      }
+      Alert.alert('Product updated successfully');
+      navigation.navigate('Home');
+    }
   };
 
   const deleteItem = (index: any) => {

@@ -51,7 +51,6 @@ export async function getOrderDetails(salesOrder: string) {
       },
     });
     const data = await response.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.error(error);
@@ -67,7 +66,6 @@ export async function updateOrderDetails(
   orderUpdate: orderDataInterface[],
   location: string,
 ) {
-  console.log({orderNo, orderUpdate, location});
   try {
     const response = await fetch(`${OrderData}update-order-item/${orderNo}`, {
       method: 'PATCH',
@@ -77,6 +75,7 @@ export async function updateOrderDetails(
       body: JSON.stringify({location: location, items: orderUpdate}),
     });
     const data = await response.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.error(error);

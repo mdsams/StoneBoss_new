@@ -14,7 +14,6 @@ import Button from '../../../Components/Button';
 import BlankSpacer from '../../../Components/BlankSpace';
 
 //API Call
-
 import {updateOrderDetails} from '../../../Controller/appController';
 
 const ProductDetails = (props: any) => {
@@ -33,6 +32,16 @@ const ProductDetails = (props: any) => {
             {props.data.quantity}
           </Text>
         </View>
+        <View>
+          <Text
+            style={{
+              color: Colors.black,
+              marginLeft: wp(8),
+              marginBottom: hp(1.5),
+            }}>
+            {props.data.ProductDescription}
+          </Text>
+        </View>
       </Swipeable>
     </GestureHandlerRootView>
   );
@@ -41,15 +50,23 @@ const ProductDetails = (props: any) => {
 const OrderItemListing = ({requiredData}: any) => {
   const navigation = useNavigation();
   const finishOrderUpdate = async () => {
+    //Deleting the ProductDescription value as the API doesn't need this value
+    listData.forEach((object: any) => {
+      delete object['ProductDescription'];
+    });
     const data = await updateOrderDetails(
       requiredData['sales order'],
       listData,
       requiredData?.Location,
     );
     if (data?.serverResponse?.code === 200) {
+      //Removing all the Data from the Array
+      while (listData.length > 0) {
+        listData.pop();
+      }
       Alert.alert('Order updated successfully');
+      navigation.navigate('Home');
     }
-    navigation.navigate('Home');
   };
 
   return (

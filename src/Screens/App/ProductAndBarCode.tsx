@@ -25,7 +25,7 @@ export default function ProductAndBarCode() {
 
   //function for pushing the data in array
   const dataPush = async () => {
-    if (productCode !== '' || barCode !== '') {
+    if (productCode !== '' && barCode !== '') {
       const productDescription = await getProductDetails(productCode);
       if (!productDescription) {
         Alert.alert('Product Not Found');
@@ -42,6 +42,8 @@ export default function ProductAndBarCode() {
       }
       setProductCode('');
       setBarCode('');
+    } else {
+      Alert.alert('Product or Barcode Field in empty');
     }
   };
 

@@ -25,7 +25,6 @@ export default function Order() {
       if (productDescription?.order.length !== 0) {
         navigation.navigate('OrderItem', {productDescription});
         setSalesOrder('');
-        console.log(productDescription.order);
       } else {
         Alert.alert('Order Not Found');
       }

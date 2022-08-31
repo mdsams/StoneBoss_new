@@ -67,6 +67,10 @@ export default function ModalComponent({
     listData.push({
       prodCode: itemData !== undefined ? itemData['Product Code'] : barCode,
       quantity: count,
+      ProductDescription:
+        itemData !== undefined
+          ? itemData['Product Description']
+          : 'No product Description Found',
     });
     setBarCode('');
     setCount('');
@@ -144,7 +148,7 @@ export default function ModalComponent({
                       color: Colors.white,
                       fontFamily: fonts.Montserrat,
                     }}
-                    value={itemData['Product Code']}
+                    value={itemData['Product Description']}
                     // onChangeText={}
                   />
                 </View>
