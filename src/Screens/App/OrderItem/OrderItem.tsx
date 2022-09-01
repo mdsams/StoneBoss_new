@@ -89,7 +89,7 @@ export default function OrderItem({route}: any) {
                 <BlankSpacer height={hp(2)} />
 
                 <Text style={styles.orderDetailsValue}>
-                  {dateFormat(requiredData['Order Date'], 'dd-MM-yyyy')}
+                  {dateFormat(requiredData['Order Date'], 'MM-dd-yy')}
                 </Text>
                 <BlankSpacer height={hp(2)} />
 

@@ -159,7 +159,7 @@ export default function ProductAndBarCode() {
           height: hp(8),
         }}>
         <TextInput
-          placeholder="Enter BarCode"
+          placeholder="Enter Barcode"
           placeholderTextColor={Colors.white}
           style={{
             paddingLeft: 11,

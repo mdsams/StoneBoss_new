@@ -176,7 +176,13 @@ export default function ModalComponent({
                       fontFamily: fonts.Montserrat,
                     }}
                     value={count}
-                    onChangeText={setCount}
+                    onChangeText={text =>
+                      setCount(
+                        +text < itemData?.QuantityOrdered
+                          ? text
+                          : itemData?.QuantityOrdered + '',
+                      )
+                    }
                   />
                   <View>
                     <TouchableOpacity onPress={() => increment()}>

@@ -89,7 +89,7 @@ const ProductListing = () => {
       while (lists.length > 0) {
         lists.pop();
       }
-      Alert.alert('Product updated successfully');
+      Alert.alert('Update Product Successfully ');
       navigation.navigate('Home');
     }
   };
