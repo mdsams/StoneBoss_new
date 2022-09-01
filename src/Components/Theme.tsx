@@ -48,6 +48,7 @@ export const Images = {
   close: require('../Assets/Images/close.png'),
   pathUp: require('../Assets/Images/pathUp.png'),
   pathDown: require('../Assets/Images/pathDown.png'),
+  cart: require('../Assets/Images/cart.png'),
 };
 
 export const Dimension = {

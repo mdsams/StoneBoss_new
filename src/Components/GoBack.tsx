@@ -12,6 +12,8 @@ interface goBackProps {
   title?: string;
   rightText?: string;
   arrowColor?: string;
+  paddingBottom?: number;
+  paddingTop?: number;
 }
 
 export const GoBack = ({
@@ -19,13 +21,16 @@ export const GoBack = ({
   title,
   rightText,
   arrowColor,
+  paddingBottom,
+  paddingTop,
 }: goBackProps) => {
   const navigation = useNavigation();
   return (
     <View
       style={{
         padding: padding,
-        paddingBottom: wp(2),
+        paddingBottom: paddingBottom ? paddingBottom : wp(2),
+        paddingTop: paddingTop ? paddingTop : undefined,
         flexDirection: 'row',
         alignItems: 'center',
       }}>

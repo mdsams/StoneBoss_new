@@ -39,7 +39,7 @@ const ProductDetails = (props: any) => {
             justifyContent: 'center',
             alignItems: 'center',
             width: wp(20),
-            height: hp(8),
+            height: hp(11),
           }}>
           <Image source={Images.delete} />
         </View>
@@ -65,7 +65,7 @@ const ProductDetails = (props: any) => {
           <Text
             style={{
               color: Colors.black,
-              marginLeft: wp(7),
+              marginLeft: wp(4),
               marginBottom: hp(1),
             }}>
             {props.data.ProductDescription}
@@ -100,6 +100,7 @@ const ProductListing = () => {
     arr.splice(index, 1);
     setLists(arr);
   };
+
   return (
     <>
       <BlankSpacer height={hp(1)} />

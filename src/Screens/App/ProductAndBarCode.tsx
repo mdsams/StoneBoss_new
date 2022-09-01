@@ -1,11 +1,19 @@
-import React, {useState} from 'react';
-import {View, ImageBackground, Image, TextInput, Alert} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  ImageBackground,
+  Image,
+  TextInput,
+  Alert,
+  Text,
+} from 'react-native';
 import {Images, Colors, fonts} from '../../Components/Theme';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import {useNavigation} from '@react-navigation/native';
+import {useIsFocused} from '@react-navigation/native';
 
 //Components called
 import BlankSpacer from '../../Components/BlankSpace';
@@ -19,6 +27,9 @@ import {data} from '../offlineData/data';
 import {getProductDetails} from '../../Controller/appController';
 
 export default function ProductAndBarCode() {
+  //useIsFocused is being used for component re-render on clicking navigation.goack()
+  useIsFocused();
+
   const navigation = useNavigation();
   const [productCode, setProductCode] = useState('');
   const [barCode, setBarCode] = useState('');
@@ -52,7 +63,43 @@ export default function ProductAndBarCode() {
       source={Images.productAndBarCodeBackground}
       style={{flex: 1}}>
       <BlankSpacer height={hp(1)} />
-      <GoBack padding={wp(6)} />
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <GoBack padding={wp(6)} paddingTop={wp(0.5)} />
+        <View style={{marginRight: wp(8), marginTop: hp(2)}}>
+          <Image
+            source={Images.cart}
+            style={{
+              height: wp(12),
+              width: wp(12),
+              tintColor: Colors.offWhite,
+            }}
+          />
+          <View
+            style={{
+              height: wp(8),
+              width: wp(8),
+              backgroundColor: Colors.red,
+              borderRadius: 100,
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'absolute',
+              top: -wp(2.2),
+              right: -wp(4),
+              borderColor: Colors.white,
+              borderWidth: 1.5,
+            }}>
+            <Text
+              style={{
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: 'bold',
+                fontFamily: fonts.Montserrat,
+              }}>
+              {data.length}
+            </Text>
+          </View>
+        </View>
+      </View>
       <BlankSpacer height={hp(3)} />
       <View
         style={{
@@ -95,7 +142,7 @@ export default function ProductAndBarCode() {
             fontFamily: fonts.Montserrat,
           }}
           value={productCode}
-          onChangeText={setProductCode}
+          onChangeText={text => setProductCode(text.trim())}
         />
       </View>
       <BlankSpacer height={hp(5)} />
