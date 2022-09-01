@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {View, Text, StyleSheet, FlatList, Alert} from 'react-native';
 import {GestureHandlerRootView, Swipeable} from 'react-native-gesture-handler';
 import {
@@ -53,6 +53,7 @@ const OrderItemListing = ({requiredData}: any) => {
     //Deleting the ProductDescription value as the API doesn't need this value
     listData.forEach((object: any) => {
       delete object['ProductDescription'];
+      delete object['barcode'];
     });
     const data = await updateOrderDetails(
       requiredData['sales order'],

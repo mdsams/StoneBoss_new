@@ -72,8 +72,6 @@ export default function ModalComponent({
           ? itemData['Product Description']
           : 'No product Description Found',
     });
-    setBarCode('');
-    setCount('');
   };
 
   const increment = () => {
